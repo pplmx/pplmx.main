@@ -1,2 +1,5 @@
-http://caoyu.info/my-first-blog.html
+http://caoyu.info/build-server-zsh.html
+http://caoyu.info/build-server-tomcat.html
+http://caoyu.info/build-server-java.html
+http://caoyu.info/build-server-mysql.html
 http://caoyu.info/hello-world.html

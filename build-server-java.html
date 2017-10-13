@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://caoyu.info">
-  <title>我还是个宝宝!</title>
+  <title>linux服务器初建之java环境 | 我还是个宝宝!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="我还是个宝宝!">
-<meta property="og:url" content="http://caoyu.info/index.html">
+  <meta name="description" content="安装JDK如果命令显示无权限,请加sudo,或是进入root用户; 若是目录无权限访问,请给相关用户设置相应的访问权限-rwx 1 查看是否存在jdk环境(根据需求决定是否卸载已存在的环境)12yum list installed |grep javayum -y remove java-1.8.0-openjdk*  # 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载">
+<meta name="keywords" content="linux,java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux服务器初建之java环境">
+<meta property="og:url" content="http://caoyu.info/build-server-java.html">
 <meta property="og:site_name" content="我还是个宝宝!">
+<meta property="og:description" content="安装JDK如果命令显示无权限,请加sudo,或是进入root用户; 若是目录无权限访问,请给相关用户设置相应的访问权限-rwx 1 查看是否存在jdk环境(根据需求决定是否卸载已存在的环境)12yum list installed |grep javayum -y remove java-1.8.0-openjdk*  # 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载">
+<meta property="og:updated_time" content="2017-10-13T02:44:03.163Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我还是个宝宝!">
+<meta name="twitter:title" content="linux服务器初建之java环境">
+<meta name="twitter:description" content="安装JDK如果命令显示无权限,请加sudo,或是进入root用户; 若是目录无权限访问,请给相关用户设置相应的访问权限-rwx 1 查看是否存在jdk环境(根据需求决定是否卸载已存在的环境)12yum list installed |grep javayum -y remove java-1.8.0-openjdk*  # 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载">
   
     <link rel="alternative" href="/atom.xml" title="我还是个宝宝!" type="application/atom+xml">
   
@@ -171,211 +176,26 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-build-server-zsh" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-build-server-java" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/build-server-zsh.html">linux服务器初建之zsh安装</a>
+    <h1 class="article-title" itemprop="name">
+      linux服务器初建之java环境
     </h1>
   
 
         <!-- 显示阅读量 -->
 			
-		<!-- 显示阅读量 -->
-        
-        <a href="/build-server-zsh.html" class="archive-article-date">
-  	<time datetime="2017-10-13T03:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h1><pre><code>root下操作
-</code></pre><h2 id="1-安装zsh"><a href="#1-安装zsh" class="headerlink" title="1 安装zsh"></a>1 安装zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install zsh</div></pre></td></tr></table></figure>
-<h2 id="2-切换bash至zsh"><a href="#2-切换bash至zsh" class="headerlink" title="2 切换bash至zsh"></a>2 切换bash至zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">chsh -s /bin/zsh</div><div class="line">reboot</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/build-server-zsh.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">zsh</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/linux//" class="article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/build-server-zsh.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-build-server-tomcat" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/build-server-tomcat.html">linux服务器初建之tomcat安装</a>
-    </h1>
-  
-
-        <!-- 显示阅读量 -->
-			
-		<!-- 显示阅读量 -->
-        
-        <a href="/build-server-tomcat.html" class="archive-article-date">
-  	<time datetime="2017-10-13T02:31:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="安装tomcat"><a href="#安装tomcat" class="headerlink" title="安装tomcat"></a>安装tomcat</h1><h2 id="1-安装tomcat"><a href="#1-安装tomcat" class="headerlink" title="1 安装tomcat"></a>1 安装tomcat</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo yum install tomcat</div></pre></td></tr></table></figure>
-<h2 id="2-安装管理包"><a href="#2-安装管理包" class="headerlink" title="2 安装管理包"></a>2 安装管理包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo yum install tomcat-webapps tomcat-admin-webapps</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/build-server-tomcat.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tomcat</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/linux//" class="article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/build-server-tomcat.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-build-server-java" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/build-server-java.html">linux服务器初建之java环境</a>
-    </h1>
-  
-
-        <!-- 显示阅读量 -->
+			<br/>
+			<a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+			<span class="icon-sort"></span>
+			<span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+			          阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+			</span>
+			</a>
 			
 		<!-- 显示阅读量 -->
         
@@ -390,11 +210,45 @@ var _hmt = _hmt || [];
         <h1 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h1><p>如果命令显示无权限,请加sudo,或是进入root用户;</p>
 <p>若是目录无权限访问,请给相关用户设置相应的访问权限-rwx</p>
 <h2 id="1-查看是否存在jdk环境"><a href="#1-查看是否存在jdk环境" class="headerlink" title="1 查看是否存在jdk环境"></a>1 查看是否存在jdk环境</h2><p>(根据需求决定是否卸载已存在的环境)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">yum list installed |grep java</div><div class="line">yum -y remove java-1.8.0-openjdk*  <span class="comment"># 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载</span></div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/build-server-java.html#more">more >></a>
-        
+<a id="more"></a>
+<h2 id="2-安装jdk"><a href="#2-安装jdk" class="headerlink" title="2 安装jdk"></a>2 安装jdk</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">yum -y list java*  <span class="comment"># 查看jdk软件包列表</span></div><div class="line">yum install java-1.8.0-openjdk*  <span class="comment"># 安装所有java程序</span></div><div class="line"><span class="comment"># 如果不是所有程序都需要,也可仅执行如下命令</span></div><div class="line">yum install java-1.8.0-openjdk java-1.8.0-openjdk-devel</div><div class="line">java -version  <span class="comment"># 查看jdk版本号</span></div></pre></td></tr></table></figure>
+<h2 id="3-配置环境变量"><a href="#3-配置环境变量" class="headerlink" title="3 配置环境变量"></a>3 配置环境变量</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/profile <span class="comment"># 编辑该文件</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># set java environment  </div><div class="line">JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk-1.8.0.144-0.b01.el7_4.x86_64</div><div class="line">PATH=$PATH:$JAVA_HOME/bin  </div><div class="line">CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar  </div><div class="line">export JAVA_HOME  CLASSPATH  PATH</div></pre></td></tr></table></figure>
+<p>退出并保存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">. /etc/profile   <span class="comment"># 注意:那里是需要空格的</span></div><div class="line"><span class="built_in">echo</span> <span class="variable">$JAVA_HOME</span>  <span class="comment"># 查看</span></div><div class="line"><span class="built_in">echo</span> <span class="variable">$CLASSPATH</span>  <span class="comment"># 查看</span></div></pre></td></tr></table></figure></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/AliPay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/WeChatPay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -429,16 +283,84 @@ var _hmt = _hmt || [];
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/build-server-java.html">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://caoyu.info/build-server-java.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/build-server-tomcat.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          linux服务器初建之tomcat安装
+        
+      </div>
+    </a>
+  
+  
+    <a href="/build-server-mysql.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">linux服务器初建之mysql安装</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -453,183 +375,32 @@ var _hmt = _hmt || [];
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-build-server-mysql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/build-server-mysql.html">linux服务器初建之mysql安装</a>
-    </h1>
-  
-
-        <!-- 显示阅读量 -->
-			
-		<!-- 显示阅读量 -->
-        
-        <a href="/build-server-mysql.html" class="archive-article-date">
-  	<time datetime="2017-10-13T00:33:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h1><h2 id="1-下载mysql的repo源"><a href="#1-下载mysql的repo源" class="headerlink" title="1 下载mysql的repo源"></a>1 下载mysql的repo源</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm</div></pre></td></tr></table></figure>
-<h2 id="2-安装mysql的rpm包"><a href="#2-安装mysql的rpm包" class="headerlink" title="2 安装mysql的rpm包"></a>2 安装mysql的rpm包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo rpm -ivh mysql57-community-release-el7-11.noarch.rpm</div></pre></td></tr></table></figure>
-<h2 id="3-安装mysql"><a href="#3-安装mysql" class="headerlink" title="3 安装mysql"></a>3 安装mysql</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo yum install mysql-server</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/build-server-mysql.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/linux//" class="article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/build-server-mysql.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装JDK"><span class="toc-number">1.</span> <span class="toc-text">安装JDK</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-查看是否存在jdk环境"><span class="toc-number">1.1.</span> <span class="toc-text">1 查看是否存在jdk环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-安装jdk"><span class="toc-number">1.2.</span> <span class="toc-text">2 安装jdk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-配置环境变量"><span class="toc-number">1.3.</span> <span class="toc-text">3 配置环境变量</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/hello-world.html">Hello World</a>
-    </h1>
   
 
-        <!-- 显示阅读量 -->
-			
-		<!-- 显示阅读量 -->
-        
-        <a href="/hello-world.html" class="archive-article-date">
-  	<time datetime="2017-08-20T11:14:19.181Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/hello-world.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -662,8 +433,8 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

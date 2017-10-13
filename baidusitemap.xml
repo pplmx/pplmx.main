@@ -4,19 +4,87 @@
 
     
   <url>
-    <loc>http://caoyu.info/my-first-blog.html</loc>
-    <lastmod>2017-10-02T05:31:21.765Z</lastmod>
+    <loc>http://caoyu.info/build-server-zsh.html</loc>
+    <lastmod>2017-10-13T03:26:37.129Z</lastmod>
     <data>
         <display>
-        <title>github搭建博客的优势</title>
-        <pubTime>2017-08-20T11:58:25.000Z</pubTime>
+        <title>linux服务器初建之zsh安装</title>
+        <pubTime>2017-10-13T03:10:44.000Z</pubTime>
         
-        <tag>随笔</tag>
+        <tag>linux</tag>
+         
+        <tag>zsh</tag>
          
          
            
              
-              <breadCrumb title="默认分类" url="http://caoyu.info/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/"/>
+              <breadCrumb title="linux" url="http://caoyu.info/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://caoyu.info/build-server-tomcat.html</loc>
+    <lastmod>2017-10-13T03:05:33.069Z</lastmod>
+    <data>
+        <display>
+        <title>linux服务器初建之tomcat安装</title>
+        <pubTime>2017-10-13T02:31:14.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>tomcat</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://caoyu.info/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://caoyu.info/build-server-java.html</loc>
+    <lastmod>2017-10-13T02:44:03.163Z</lastmod>
+    <data>
+        <display>
+        <title>linux服务器初建之java环境</title>
+        <pubTime>2017-10-13T01:48:25.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>java</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://caoyu.info/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://caoyu.info/build-server-mysql.html</loc>
+    <lastmod>2017-10-13T01:50:11.734Z</lastmod>
+    <data>
+        <display>
+        <title>linux服务器初建之mysql安装</title>
+        <pubTime>2017-10-13T00:33:23.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://caoyu.info/categories/linux/"/>
           
         </display>
     </data>

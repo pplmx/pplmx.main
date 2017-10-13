@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://caoyu.info/my-first-blog.html</loc>
+    <loc>http://caoyu.info/build-server-zsh.html</loc>
     
-    <lastmod>2017-10-02T05:31:21.765Z</lastmod>
+    <lastmod>2017-10-13T03:26:37.129Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://caoyu.info/build-server-tomcat.html</loc>
+    
+    <lastmod>2017-10-13T03:05:33.069Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://caoyu.info/build-server-java.html</loc>
+    
+    <lastmod>2017-10-13T02:44:03.163Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://caoyu.info/build-server-mysql.html</loc>
+    
+    <lastmod>2017-10-13T01:50:11.734Z</lastmod>
     
   </url>
   
