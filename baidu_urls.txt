@@ -1,5 +1,6 @@
-http://caoyu.info/build-server-zsh.html
-http://caoyu.info/build-server-tomcat.html
-http://caoyu.info/build-server-java.html
-http://caoyu.info/build-server-mysql.html
-http://caoyu.info/hello-world.html
+http://caoyu.info/articles/Injection-of-Autowired-and-Resource.html
+http://caoyu.info/articles/build-server-zsh.html
+http://caoyu.info/articles/build-server-tomcat.html
+http://caoyu.info/articles/build-server-java.html
+http://caoyu.info/articles/build-server-mysql.html
+http://caoyu.info/articles/hello-world.html

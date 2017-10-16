@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://caoyu.info">
-  <title>linux服务器初建之java环境 | 我还是个宝宝!</title>
+  <title>IDEA对@Autowired的使用提示警告 | 我还是个宝宝!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装JDK如果命令显示无权限,请加sudo,或是进入root用户; 若是目录无权限访问,请给相关用户设置相应的访问权限-rwx 1 查看是否存在jdk环境(根据需求决定是否卸载已存在的环境)12yum list installed |grep javayum -y remove java-1.8.0-openjdk*  # 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载">
-<meta name="keywords" content="linux,java">
+  <meta name="description" content="1 idea警告信息Spring Team recommends: &amp;quot;Always use constructor based dependency injection in your beans. Always use assertions for mandatory dependencies&amp;quot;. Spring Team建议：“在你的bean中,使用基于构造函数的依赖注入;并">
+<meta name="keywords" content="IDEA,DI">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux服务器初建之java环境">
-<meta property="og:url" content="http://caoyu.info/build-server-java.html">
+<meta property="og:title" content="IDEA对@Autowired的使用提示警告">
+<meta property="og:url" content="http://caoyu.info/articles/Injection-of-Autowired-and-Resource.html">
 <meta property="og:site_name" content="我还是个宝宝!">
-<meta property="og:description" content="安装JDK如果命令显示无权限,请加sudo,或是进入root用户; 若是目录无权限访问,请给相关用户设置相应的访问权限-rwx 1 查看是否存在jdk环境(根据需求决定是否卸载已存在的环境)12yum list installed |grep javayum -y remove java-1.8.0-openjdk*  # 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载">
-<meta property="og:updated_time" content="2017-10-13T02:44:03.163Z">
+<meta property="og:description" content="1 idea警告信息Spring Team recommends: &amp;quot;Always use constructor based dependency injection in your beans. Always use assertions for mandatory dependencies&amp;quot;. Spring Team建议：“在你的bean中,使用基于构造函数的依赖注入;并">
+<meta property="og:updated_time" content="2017-10-16T11:39:21.846Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux服务器初建之java环境">
-<meta name="twitter:description" content="安装JDK如果命令显示无权限,请加sudo,或是进入root用户; 若是目录无权限访问,请给相关用户设置相应的访问权限-rwx 1 查看是否存在jdk环境(根据需求决定是否卸载已存在的环境)12yum list installed |grep javayum -y remove java-1.8.0-openjdk*  # 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载">
+<meta name="twitter:title" content="IDEA对@Autowired的使用提示警告">
+<meta name="twitter:description" content="1 idea警告信息Spring Team recommends: &amp;quot;Always use constructor based dependency injection in your beans. Always use assertions for mandatory dependencies&amp;quot;. Spring Team建议：“在你的bean中,使用基于构造函数的依赖注入;并">
   
     <link rel="alternative" href="/atom.xml" title="我还是个宝宝!" type="application/atom+xml">
   
@@ -176,14 +176,14 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-build-server-java" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Injection-of-Autowired-and-Resource" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      linux服务器初建之java环境
+      IDEA对@Autowired的使用提示警告
     </h1>
   
 
@@ -199,22 +199,31 @@ var _hmt = _hmt || [];
 			
 		<!-- 显示阅读量 -->
         
-        <a href="/build-server-java.html" class="archive-article-date">
-  	<time datetime="2017-10-13T01:48:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-13</time>
+        <a href="/articles/Injection-of-Autowired-and-Resource.html" class="archive-article-date">
+  	<time datetime="2017-10-16T07:41:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h1><p>如果命令显示无权限,请加sudo,或是进入root用户;</p>
-<p>若是目录无权限访问,请给相关用户设置相应的访问权限-rwx</p>
-<h2 id="1-查看是否存在jdk环境"><a href="#1-查看是否存在jdk环境" class="headerlink" title="1 查看是否存在jdk环境"></a>1 查看是否存在jdk环境</h2><p>(根据需求决定是否卸载已存在的环境)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">yum list installed |grep java</div><div class="line">yum -y remove java-1.8.0-openjdk*  <span class="comment"># 匹配所有以java-1.8.0-openjdk开头的文件,然后卸载</span></div></pre></td></tr></table></figure></p>
+        <h1 id="1-idea警告信息"><a href="#1-idea警告信息" class="headerlink" title="1 idea警告信息"></a>1 idea警告信息</h1><pre><code>Spring Team recommends: &quot;Always use constructor based dependency injection in your beans. Always use assertions for mandatory dependencies&quot;.
+Spring Team建议：“在你的bean中,使用基于构造函数的依赖注入;并且使用强制依赖关系的断言”。
+</code></pre><h1 id="2-被警告的代码"><a href="#2-被警告的代码" class="headerlink" title="2 被警告的代码"></a>2 被警告的代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Autowired</span></div><div class="line"><span class="keyword">private</span> UserService userService;</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="2-安装jdk"><a href="#2-安装jdk" class="headerlink" title="2 安装jdk"></a>2 安装jdk</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">yum -y list java*  <span class="comment"># 查看jdk软件包列表</span></div><div class="line">yum install java-1.8.0-openjdk*  <span class="comment"># 安装所有java程序</span></div><div class="line"><span class="comment"># 如果不是所有程序都需要,也可仅执行如下命令</span></div><div class="line">yum install java-1.8.0-openjdk java-1.8.0-openjdk-devel</div><div class="line">java -version  <span class="comment"># 查看jdk版本号</span></div></pre></td></tr></table></figure>
-<h2 id="3-配置环境变量"><a href="#3-配置环境变量" class="headerlink" title="3 配置环境变量"></a>3 配置环境变量</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/profile <span class="comment"># 编辑该文件</span></div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># set java environment  </div><div class="line">JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk-1.8.0.144-0.b01.el7_4.x86_64</div><div class="line">PATH=$PATH:$JAVA_HOME/bin  </div><div class="line">CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar  </div><div class="line">export JAVA_HOME  CLASSPATH  PATH</div></pre></td></tr></table></figure>
-<p>退出并保存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">. /etc/profile   <span class="comment"># 注意:那里是需要空格的</span></div><div class="line"><span class="built_in">echo</span> <span class="variable">$JAVA_HOME</span>  <span class="comment"># 查看</span></div><div class="line"><span class="built_in">echo</span> <span class="variable">$CLASSPATH</span>  <span class="comment"># 查看</span></div></pre></td></tr></table></figure></p>
+<h1 id="3-Spring-Team推荐的写法"><a href="#3-Spring-Team推荐的写法" class="headerlink" title="3 Spring Team推荐的写法"></a>3 Spring Team推荐的写法</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> UserService userService;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">UserController</span><span class="params">(UserService userService)</span></span>&#123;</div><div class="line">    <span class="keyword">this</span>.userService = userService;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>Spring Team推荐使用构造器注入,我猜测是java变量初始化顺序的原因
+Java变量的初始化顺序为：静态变量或静态代码块–&gt;实例变量或初始化代码块–&gt;构造方法 - &gt;@Autowired
+</code></pre><h1 id="4-或者使用-Resource"><a href="#4-或者使用-Resource" class="headerlink" title="4 或者使用@Resource"></a>4 或者使用@Resource</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Resource</span></div><div class="line"><span class="keyword">private</span> UserService userService;</div></pre></td></tr></table></figure>
+<h1 id="5-简析-Resource和-Autowired"><a href="#5-简析-Resource和-Autowired" class="headerlink" title="5 简析@Resource和@Autowired"></a>5 简析@Resource和@Autowired</h1><h2 id="5-1-Resource"><a href="#5-1-Resource" class="headerlink" title="5.1 @Resource"></a>5.1 @Resource</h2><pre><code>默认按照byName自动注入,由J2EE提供,需要导入javax.annotation.Resource
+它有两个重要的属性name和type,而Spring将@Resource注解的name属性解析为bean的名字,而type属性则解析为bean的类型
+所以,如果使用name属性,则使用byName的自动注入策略,而使用type属性时则使用byType自动注入策略
+如果name和type属性都未指定,则默认byName注入,byName未找到时,会继续采用byType注入
+</code></pre><h2 id="5-2-Autowired"><a href="#5-2-Autowired" class="headerlink" title="5.2 @Autowired"></a>5.2 @Autowired</h2><pre><code>采用byType自动注入,由Spring提供,需要导入org.springframework.beans.factory.annotation.Autowired
+默认情况要求对象必须存在,如果需要为null,可以设置它的required=true
+如果接口存在多个实现类,我们依然可以byName自动注入:通过与@Qualifier搭配使用
+即先byType,byType匹配到多个时,再通过byName
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Autowired</span></div><div class="line"><span class="meta">@Qualifier</span>(<span class="string">"userServiceForXXX"</span>)</div><div class="line"><span class="keyword">private</span> UserService userService;</div></pre></td></tr></table></figure>
 
       
 
@@ -259,11 +268,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IDEA</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DI</a>
         		</li>
       		
 		</ul>
@@ -275,7 +284,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/linux//" class="article-tag-list-link color1">linux</a>
+        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
@@ -330,7 +339,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://caoyu.info/build-server-java.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://caoyu.info/articles/Injection-of-Autowired-and-Resource.html" alt="微信分享二维码">
     </div>
 </div>-->
 
@@ -344,18 +353,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/build-server-tomcat.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          linux服务器初建之tomcat安装
-        
-      </div>
-    </a>
   
-  
-    <a href="/build-server-mysql.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">linux服务器初建之mysql安装</div>
+    <a href="/articles/build-server-zsh.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">linux服务器初建之zsh安装</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -382,7 +382,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装JDK"><span class="toc-number">1.</span> <span class="toc-text">安装JDK</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-查看是否存在jdk环境"><span class="toc-number">1.1.</span> <span class="toc-text">1 查看是否存在jdk环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-安装jdk"><span class="toc-number">1.2.</span> <span class="toc-text">2 安装jdk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-配置环境变量"><span class="toc-number">1.3.</span> <span class="toc-text">3 配置环境变量</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-idea警告信息"><span class="toc-number">1.</span> <span class="toc-text">1 idea警告信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-被警告的代码"><span class="toc-number">2.</span> <span class="toc-text">2 被警告的代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Spring-Team推荐的写法"><span class="toc-number">3.</span> <span class="toc-text">3 Spring Team推荐的写法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-或者使用-Resource"><span class="toc-number">4.</span> <span class="toc-text">4 或者使用@Resource</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-简析-Resource和-Autowired"><span class="toc-number">5.</span> <span class="toc-text">5 简析@Resource和@Autowired</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-Resource"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 @Resource</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-Autowired"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 @Autowired</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -504,7 +504,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">DI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -513,10 +525,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">

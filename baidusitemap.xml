@@ -4,7 +4,29 @@
 
     
   <url>
-    <loc>http://caoyu.info/build-server-zsh.html</loc>
+    <loc>http://caoyu.info/articles/Injection-of-Autowired-and-Resource.html</loc>
+    <lastmod>2017-10-16T11:39:21.846Z</lastmod>
+    <data>
+        <display>
+        <title>IDEA对@Autowired的使用提示警告</title>
+        <pubTime>2017-10-16T07:41:38.000Z</pubTime>
+        
+        <tag>IDEA</tag>
+         
+        <tag>DI</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://caoyu.info/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://caoyu.info/articles/build-server-zsh.html</loc>
     <lastmod>2017-10-13T03:26:37.129Z</lastmod>
     <data>
         <display>
@@ -26,7 +48,7 @@
 
     
   <url>
-    <loc>http://caoyu.info/build-server-tomcat.html</loc>
+    <loc>http://caoyu.info/articles/build-server-tomcat.html</loc>
     <lastmod>2017-10-13T03:05:33.069Z</lastmod>
     <data>
         <display>
@@ -48,7 +70,7 @@
 
     
   <url>
-    <loc>http://caoyu.info/build-server-java.html</loc>
+    <loc>http://caoyu.info/articles/build-server-java.html</loc>
     <lastmod>2017-10-13T02:44:03.163Z</lastmod>
     <data>
         <display>
@@ -70,7 +92,7 @@
 
     
   <url>
-    <loc>http://caoyu.info/build-server-mysql.html</loc>
+    <loc>http://caoyu.info/articles/build-server-mysql.html</loc>
     <lastmod>2017-10-13T01:50:11.734Z</lastmod>
     <data>
         <display>
@@ -93,7 +115,7 @@
     
     
   <url>
-    <loc>http://caoyu.info/hello-world.html</loc>
+    <loc>http://caoyu.info/articles/hello-world.html</loc>
     <lastmod>2017-08-20T11:14:19.181Z</lastmod>
     <data>
         <display>
