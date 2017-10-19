@@ -3,9 +3,33 @@
 
 
     
+  <url>
+    <loc>http://caoyu.info/spring-injection-failed.html</loc>
+    <lastmod>2017-10-19T11:48:56.205Z</lastmod>
+    <data>
+        <display>
+        <title>spring注入null</title>
+        <pubTime>2017-10-19T06:06:41.000Z</pubTime>
+        
+        <tag>IDEA</tag>
+         
+        <tag>DI</tag>
+         
+        <tag>Spring</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://caoyu.info/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
-    <loc>http://caoyu.info/Injection-of-Autowired-and-Resource.html</loc>
+    <loc>http://caoyu.info/autowired-and-resource.html</loc>
     <lastmod>2017-10-16T11:39:21.846Z</lastmod>
     <data>
         <display>

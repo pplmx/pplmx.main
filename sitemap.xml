@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://caoyu.info/spring-injection-failed.html</loc>
+    
+    <lastmod>2017-10-19T11:48:56.205Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://caoyu.info/google8c0ba181a25e1328.html</loc>
     
     <lastmod>2017-10-17T12:35:41.859Z</lastmod>
@@ -9,7 +16,7 @@
   </url>
   
   <url>
-    <loc>http://caoyu.info/Injection-of-Autowired-and-Resource.html</loc>
+    <loc>http://caoyu.info/autowired-and-resource.html</loc>
     
     <lastmod>2017-10-16T11:39:21.846Z</lastmod>
     
