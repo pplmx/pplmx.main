@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://caoyu.info">
-  <title>linux服务器初建之mysql安装 | 我还是个宝宝!</title>
+  <title>我还是个宝宝!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装mysql1 下载mysql的repo源1$ wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm 2 安装mysql的rpm包1$ sudo rpm -ivh mysql57-community-release-el7-11.noarch.rpm 3 安装mysql1$ sudo yum inst">
-<meta name="keywords" content="linux,mysql">
-<meta property="og:type" content="article">
-<meta property="og:title" content="linux服务器初建之mysql安装">
-<meta property="og:url" content="http://caoyu.info/articles/build-server-mysql.html">
+  <meta name="description" content="mystic-cg.github.ioBlog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="我还是个宝宝!">
+<meta property="og:url" content="http://caoyu.info/README.html">
 <meta property="og:site_name" content="我还是个宝宝!">
-<meta property="og:description" content="安装mysql1 下载mysql的repo源1$ wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm 2 安装mysql的rpm包1$ sudo rpm -ivh mysql57-community-release-el7-11.noarch.rpm 3 安装mysql1$ sudo yum inst">
-<meta property="og:updated_time" content="2017-10-13T01:50:11.734Z">
+<meta property="og:description" content="mystic-cg.github.ioBlog">
+<meta property="og:updated_time" content="2017-08-20T11:43:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux服务器初建之mysql安装">
-<meta name="twitter:description" content="安装mysql1 下载mysql的repo源1$ wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm 2 安装mysql的rpm包1$ sudo rpm -ivh mysql57-community-release-el7-11.noarch.rpm 3 安装mysql1$ sudo yum inst">
+<meta name="twitter:title" content="我还是个宝宝!">
+<meta name="twitter:description" content="mystic-cg.github.ioBlog">
   
     <link rel="alternative" href="/atom.xml" title="我还是个宝宝!" type="application/atom+xml">
   
@@ -33,6 +32,19 @@
     }
   </style>
   
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-108245491-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
 
   
 <script>
@@ -56,11 +68,11 @@ var _hmt = _hmt || [];
 <div class="overlay" style="background: #4d4d4d"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
-		<a href="/" class="profilepic">
+		<a href="/blog/" class="profilepic">
 			<img src="/img/shilan.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">caoyu</a></h1>
+		  <h1 class="header-author"><a href="/blog/">caoyu</a></h1>
 		</hgroup>
 		
 		<p class="header-subtitle">宝宝,就是我,耶~</p>
@@ -176,51 +188,12 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-build-server-mysql" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      linux服务器初建之mysql安装
-    </h1>
-  
-
-        <!-- 显示阅读量 -->
-			
-			<br/>
-			<a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
-			<span class="icon-sort"></span>
-			<span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
-			          阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
-			</span>
-			</a>
-			
-		<!-- 显示阅读量 -->
-        
-        <a href="/articles/build-server-mysql.html" class="archive-article-date">
-  	<time datetime="2017-10-13T00:33:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-13</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h1><h2 id="1-下载mysql的repo源"><a href="#1-下载mysql的repo源" class="headerlink" title="1 下载mysql的repo源"></a>1 下载mysql的repo源</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm</div></pre></td></tr></table></figure>
-<h2 id="2-安装mysql的rpm包"><a href="#2-安装mysql的rpm包" class="headerlink" title="2 安装mysql的rpm包"></a>2 安装mysql的rpm包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo rpm -ivh mysql57-community-release-el7-11.noarch.rpm</div></pre></td></tr></table></figure>
-<h2 id="3-安装mysql"><a href="#3-安装mysql" class="headerlink" title="3 安装mysql"></a>3 安装mysql</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo yum install mysql-server</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="4-重置mysql密码"><a href="#4-重置mysql密码" class="headerlink" title="4 重置mysql密码"></a>4 重置mysql密码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysql -u root</div></pre></td></tr></table></figure>
-<p>登录时有可能报这样的错：ERROR 2002 (HY000): Can‘t connect to local MySQL server through socket ‘/var/lib/mysql/mysql.sock‘<br>原因是/var/lib/mysql的访问权限问题。下面的命令把/var/lib/mysql的拥有者改为当前用户：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo chown -R root:root /var/lib/mysql</div></pre></td></tr></table></figure></p>
-<p>重启mysql服务<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ service mysqld restart</div></pre></td></tr></table></figure></p>
-<p>接下来是登录mysql(有两种情况)</p>
-<h3 id="4-1-直接登录成功"><a href="#4-1-直接登录成功" class="headerlink" title="4.1 直接登录成功"></a>4.1 直接登录成功</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ mysql -u root  //直接回车进入mysql控制台</div><div class="line">mysql &gt; use mysql;</div><div class="line">mysql &gt; update user <span class="built_in">set</span> password=password(<span class="string">'123456'</span>) <span class="built_in">where</span> user=<span class="string">'root'</span>;</div><div class="line">mysql &gt; <span class="built_in">exit</span>;</div></pre></td></tr></table></figure>
-<h3 id="4-2-登录失败"><a href="#4-2-登录失败" class="headerlink" title="4.2 登录失败"></a>4.2 登录失败</h3><p>登录失败:是因为密码错误,不是默认的空密码,<br>而是在安装时,mysql默认分配了随机密码<br>如果你的安装信息是详细显示的,那么你是可以在之前的安装信息中,找到随机密码<br>找不到,那就继续如下操作:</p>
-<p>1.修改MySQL的登录设置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># vi /etc/my.cnf // 在[mysqld]的段中加上一句：skip-grant-tables</span></div></pre></td></tr></table></figure></p>
-<p>2.重新启动mysql,并登录(mysql5.7,password字段不存在了,而是authentication_string)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># service mysqld restart</span></div><div class="line"><span class="comment"># mysql -uroot -p//回车</span></div><div class="line">mysql&gt; use mysql;</div><div class="line">mysql&gt; update mysql.user <span class="built_in">set</span> authentication_string=password(<span class="string">'123456'</span>) <span class="built_in">where</span> user=<span class="string">'root'</span> and Host = <span class="string">'localhost'</span>;</div><div class="line">mysql&gt; flush privileges;</div><div class="line">mysql&gt; quit;</div></pre></td></tr></table></figure></p>
-<p>3.还原/etc/my.cnf(将skip-grant-tables删除)</p>
-<p>4.重启mysql,即可使用新密码登录了</p>
+        <h1 id="mystic-cg-github-io"><a href="#mystic-cg-github-io" class="headerlink" title="mystic-cg.github.io"></a>mystic-cg.github.io</h1><p>Blog</p>
 
       
 
@@ -260,33 +233,7 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/linux//" class="article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -336,7 +283,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://caoyu.info/articles/build-server-mysql.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://caoyu.info/README.html" alt="微信分享二维码">
     </div>
 </div>-->
 
@@ -348,25 +295,6 @@ var _hmt = _hmt || [];
 </article>
 
   
-<nav id="article-nav">
-  
-    <a href="/articles/build-server-java.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          linux服务器初建之java环境
-        
-      </div>
-    </a>
-  
-  
-    <a href="/articles/hello-world.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -388,7 +316,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装mysql"><span class="toc-number">1.</span> <span class="toc-text">安装mysql</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-下载mysql的repo源"><span class="toc-number">1.1.</span> <span class="toc-text">1 下载mysql的repo源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-安装mysql的rpm包"><span class="toc-number">1.2.</span> <span class="toc-text">2 安装mysql的rpm包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-安装mysql"><span class="toc-number">1.3.</span> <span class="toc-text">3 安装mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-重置mysql密码"><span class="toc-number">1.4.</span> <span class="toc-text">4 重置mysql密码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-直接登录成功"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 直接登录成功</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-登录失败"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2 登录失败</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mystic-cg-github-io"><span class="toc-number">1.</span> <span class="toc-text">mystic-cg.github.io</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -407,6 +335,22 @@ var _hmt = _hmt || [];
 
   
 
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://caoyu.info/README.html",
+  owner: 'mystic-cg',
+  repo: 'blog',
+  oauth: {
+    client_id: '3a1d4be0c566b05dc57f',
+    client_secret: '84200af532f464097c557baac941a4a08e570dd8',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
@@ -440,7 +384,7 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
@@ -514,10 +458,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
@@ -530,11 +470,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">zsh</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
             
             <div class="clearfix"></div>
