@@ -33,7 +33,7 @@
             for (var i = 0; i < song.length; i++) {
                 if (i === date) {
                     audio.src = "qin_moon/" + song[date] + ".mp3";
-                    songLi.innerText = " 秦时明月:"+song[date];
+                    songLi.innerText = " 秦时明月:" + song[date];
                     //audio.setAttribute("src","qin_moon/"+song[date]+".mp3");
                     break;
                 }
@@ -167,6 +167,7 @@ void main(void) {
 }
 
 
+
 </script>
 <script id="sakura_point_fsh" type="x-shader/x_fragment">
 #ifdef GL_ES
@@ -241,6 +242,7 @@ void main(void) {
 }
 
 
+
 </script>
 <!-- effects -->
 <script id="fx_common_vsh" type="x-shader/x_vertex">
@@ -255,6 +257,7 @@ void main(void) {
     texCoord = aPosition.xy * 0.5 + vec2(0.5, 0.5);
     screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
 }
+
 
 
 </script>
@@ -279,6 +282,7 @@ void main(void) {
 }
 
 
+
 </script>
 <script id="fx_brightbuf_fsh" type="x-shader/x_fragment">
 #ifdef GL_ES
@@ -295,6 +299,7 @@ void main(void) {
     vec4 col = texture2D(uSrc, texCoord);
     gl_FragColor = vec4(col.rgb * 2.0 - vec3(0.5), 1.0);
 }
+
 
 
 </script>
@@ -320,6 +325,7 @@ void main(void) {
 }
 
 
+
 </script>
 <!-- effect fragment shader template -->
 <script id="fx_common_fsh" type="x-shader/x_fragment">
@@ -338,6 +344,7 @@ void main(void) {
 }
 
 
+
 </script>
 <!-- post processing -->
 <script id="pp_final_vsh" type="x-shader/x_vertex">
@@ -350,6 +357,7 @@ void main(void) {
     texCoord = aPosition.xy * 0.5 + vec2(0.5, 0.5);
     screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
 }
+
 
 
 </script>
@@ -374,6 +382,7 @@ void main(void) {
     gl_FragColor = vec4(col.rgb, 1.0);
     gl_FragColor.a = 1.0;
 }
+
 
 
 </script>
