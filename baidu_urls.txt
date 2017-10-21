@@ -1,7 +1,0 @@
-http://caoyu.info/spring-injection-failed.html
-http://caoyu.info/autowired-and-resource.html
-http://caoyu.info/build-server-zsh.html
-http://caoyu.info/build-server-tomcat.html
-http://caoyu.info/build-server-java.html
-http://caoyu.info/build-server-mysql.html
-http://caoyu.info/hello-world.html
