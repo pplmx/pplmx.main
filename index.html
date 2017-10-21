@@ -27,12 +27,13 @@
     <script type="text/javascript">
         function change() {
             var song = ["乾坤鸣动", "飞雪玉花", "国色天香", "罗生堂下", "纵横天下", "谁主沉浮", "阴阳无极"];
+            var songLetter = ["universe","snow_flower","beautiful","hall","invincible","dominate","chaos"];
             var date = new Date().getDay();
             var audio = document.getElementsByTagName("audio")[0];
             var songLi = document.getElementsByClassName("song")[0];
             for (var i = 0; i < song.length; i++) {
                 if (i === date) {
-                    audio.src = "qin_moon/" + song[date] + ".mp3";
+                    audio.src = "qin_moon/" + songLetter[date] + ".mp3";
                     songLi.innerText = " 秦时明月:" + song[date];
                     //audio.setAttribute("src","qin_moon/"+song[date]+".mp3");
                     break;
@@ -42,7 +43,7 @@
     </script>
 </head>
 <body class="" onload="change()">
-<audio src="music.mp3" autoplay="autoplay" loop="loop"></audio>
+<audio src="" autoplay="autoplay" loop="loop"></audio>
 <canvas id="sakura"></canvas>
 <!-- Wrapper -->
 <div id="wrapper">
@@ -58,7 +59,7 @@
             <ul class="copyright">
                 <li>©<a href="/blog">caoyu</a></li>
                 <li><img src="music.png" style="width: 10px; height: 10px;"><span class="song"></span></li>
-                <li>Blog since 2017</li>
+                <li>since 2017</li>
             </ul>
         </footer>
     </section>

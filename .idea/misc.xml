@@ -69,14 +69,6 @@
       <textMaps />
     </LinkMapSettings>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="E:/Program_Files/Java/apache-maven-3.3.9" />
-        <option name="userSettingsFile" value="E:\Program_Files\Java\apache-maven-3.3.9\conf\settings.xml" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
