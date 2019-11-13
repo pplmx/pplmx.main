@@ -1,30 +1,55 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="zh">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108245491-1"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        // Check that service workers are supported
+        if ("serviceWorker" in navigator) {
+            // attach event listener on page l aod
+            window.addEventListener("load", () => {
+                // register serviceWorker withthe [sw.js] file
+                navigator.serviceWorker.register("/sw.js").then(
+                    registration => {
+                        console.log(
+                            "ServiceWorker registration successful with scope: ",
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log("ServiceWorker registration failed: ", err);
+                    }
+                );
+            });
+        }
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'UA-108245491-1');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-108245491-1');
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <title>紫玄</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
     <!--[if lte IE 8]>
     <script src="assets/js/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="index.css">
+    <link href="index.css" rel="stylesheet">
     <!--[if lte IE 9]>
     <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
     <noscript>
-        <link rel="stylesheet" href="assets/css/noscript.css"/>
+        <link href="assets/css/noscript.css" rel="stylesheet"/>
     </noscript>
-    <link rel="icon" href="favicon.jpg" type="image/x-icon">
+    <link href="favicon.jpg" rel="icon" type="image/x-icon">
     <script>
         var _hmt = _hmt || [];
         (function () {
@@ -37,7 +62,7 @@
     <script type="text/javascript">
         function change() {
             var song = ["乾坤鸣动", "飞雪玉花", "国色天香", "罗生堂下", "纵横天下", "谁主沉浮", "阴阳无极"];
-            var songLetter = ["universe","snow_flower","beautiful","hall","invincible","dominate","chaos"];
+            var songLetter = ["universe", "snow_flower", "beautiful", "hall", "invincible", "dominate", "chaos"];
             var date = new Date().getDay();
             var audio = document.getElementsByTagName("audio")[0];
             var songLi = document.getElementsByClassName("song")[0];
@@ -53,7 +78,7 @@
     </script>
 </head>
 <body class="" onload="change()">
-<audio src="" autoplay="" loop=""></audio>
+<audio autoplay="" loop="" src=""></audio>
 <canvas id="sakura"></canvas>
 <!-- Wrapper -->
 <div id="wrapper">
@@ -61,9 +86,9 @@
     <section id="main">
         <header>
             <span class="avatar"><a href="https://blog.caoyu.info/"><img src="favicon.jpg"
-                                                      width="118px"></a></span>
+                                                                         width="118px"></a></span>
             <!-- <a href="/love"> -->
-                <h1>To infinity and beyond</h1>
+            <h1>To infinity and beyond</h1>
             <!-- </a> -->
             <p>若今生执罔虚幻，已成落花。便许你来世雪扫眉发，执手天涯。<br>你可愿青丝绾正，笑靥如花，借我一世年华。</p>
         </header>
@@ -181,6 +206,8 @@ void main(void) {
 
 
 
+
+
 </script>
 <script id="sakura_point_fsh" type="x-shader/x_fragment">
 #ifdef GL_ES
@@ -256,6 +283,8 @@ void main(void) {
 
 
 
+
+
 </script>
 <!-- effects -->
 <script id="fx_common_vsh" type="x-shader/x_vertex">
@@ -270,6 +299,8 @@ void main(void) {
     texCoord = aPosition.xy * 0.5 + vec2(0.5, 0.5);
     screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
 }
+
+
 
 
 
@@ -296,6 +327,8 @@ void main(void) {
 
 
 
+
+
 </script>
 <script id="fx_brightbuf_fsh" type="x-shader/x_fragment">
 #ifdef GL_ES
@@ -312,6 +345,8 @@ void main(void) {
     vec4 col = texture2D(uSrc, texCoord);
     gl_FragColor = vec4(col.rgb * 2.0 - vec3(0.5), 1.0);
 }
+
+
 
 
 
@@ -339,6 +374,8 @@ void main(void) {
 
 
 
+
+
 </script>
 <!-- effect fragment shader template -->
 <script id="fx_common_fsh" type="x-shader/x_fragment">
@@ -358,6 +395,8 @@ void main(void) {
 
 
 
+
+
 </script>
 <!-- post processing -->
 <script id="pp_final_vsh" type="x-shader/x_vertex">
@@ -370,6 +409,8 @@ void main(void) {
     texCoord = aPosition.xy * 0.5 + vec2(0.5, 0.5);
     screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
 }
+
+
 
 
 
@@ -395,6 +436,8 @@ void main(void) {
     gl_FragColor = vec4(col.rgb, 1.0);
     gl_FragColor.a = 1.0;
 }
+
+
 
 
 
@@ -429,8 +472,7 @@ void main(void) {
             v.array[0] = v.x;
             v.array[1] = v.y;
             v.array[2] = v.z;
-        }
-        else {
+        } else {
             v.array = new Float32Array([v.x, v.y, v.z]);
         }
         return v.array;
@@ -623,14 +665,12 @@ void main(void) {
         gl.useProgram(prog);
         for (var attr in prog.attributes) {
             gl.enableVertexAttribArray(prog.attributes[attr]);
-            ;
         }
     }
 
     function unuseShader(prog) {
         for (var attr in prog.attributes) {
             gl.disableVertexAttribArray(prog.attributes[attr]);
-            ;
         }
         gl.useProgram(null);
     }
@@ -802,8 +842,7 @@ void main(void) {
                 //out of area
                 if (prt.position[cmp] > 0) {
                     prt.position[cmp] -= limit * 2.0;
-                }
-                else {
+                } else {
                     prt.position[cmp] += limit * 2.0;
                 }
             }
@@ -828,9 +867,9 @@ void main(void) {
             prtcl.alpha = 1.0;//(pointFlower.area.z - prtcl.position[2]) * 0.5;
 
             prtcl.zkey = (camera.matrix[2] * prtcl.position[0]
-            + camera.matrix[6] * prtcl.position[1]
-            + camera.matrix[10] * prtcl.position[2]
-            + camera.matrix[14]);
+                + camera.matrix[6] * prtcl.position[1]
+                + camera.matrix[10] * prtcl.position[2]
+                + camera.matrix[14]);
         }
 
         // sort
@@ -971,16 +1010,19 @@ void main(void) {
             gl.bindTexture(gl.TEXTURE_2D, srctex.texture);
         }
     }
+
     function drawEffect(fxobj) {
         gl.bindBuffer(gl.ARRAY_BUFFER, fxobj.buffer);
         gl.vertexAttribPointer(fxobj.program.attributes.aPosition, 2, gl.FLOAT, false, 0, 0);
         gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
     }
+
     function unuseEffect(fxobj) {
         unuseShader(fxobj.program);
     }
 
     var effectLib = {};
+
     function createEffectLib() {
 
         var vtxsrc, frgsrc;
@@ -1009,9 +1051,11 @@ void main(void) {
     function createBackground() {
         //console.log("create background");
     }
+
     function initBackground() {
         //console.log("init background");
     }
+
     function renderBackground() {
         gl.disable(gl.DEPTH_TEST);
 
@@ -1025,9 +1069,11 @@ void main(void) {
 
     // post process
     var postProcess = {};
+
     function createPostProcess() {
         //console.log("create post process");
     }
+
     function initPostProcess() {
         //console.log("init post process");
     }
@@ -1084,6 +1130,7 @@ void main(void) {
 
     /////
     var SceneEnv = {};
+
     function createScene() {
         createEffectLib();
         createBackground();
@@ -1091,6 +1138,7 @@ void main(void) {
         createPostProcess();
         sceneStandBy = true;
     }
+
     function initScene() {
         initBackground();
         initPointFlowers();
@@ -1101,6 +1149,7 @@ void main(void) {
         projection.angle = Math.atan2(pointFlower.area.y, camera.position.z + pointFlower.area.z) * 180.0 / Math.PI * 2.0;
         Matrix44.loadProjection(projection.matrix, renderSpec.aspect, projection.angle, projection.nearfar[0], projection.nearfar[1]);
     }
+
     function renderScene() {
         //draw
         Matrix44.loadLookAt(camera.matrix, camera.position, camera.lookat, camera.up);
@@ -1117,6 +1166,7 @@ void main(void) {
         renderPointFlowers();
         renderPostProcess();
     }
+
     /////
     function onResize(e) {
         makeCanvasFullScreen(document.getElementById("sakura"));
@@ -1125,6 +1175,7 @@ void main(void) {
             initScene();
         }
     }
+
     function setViewports() {
         renderSpec.setSize(gl.canvas.width, gl.canvas.height);
 
@@ -1142,10 +1193,13 @@ void main(void) {
         rtfunc('wHalfRT0', renderSpec.halfWidth, renderSpec.halfHeight);
         rtfunc('wHalfRT1', renderSpec.halfWidth, renderSpec.halfHeight);
     }
+
     function render() {
         renderScene();
     }
+
     var animating = true;
+
     function toggleAnimation(elm) {
         animating ^= true;
         if (animating) animate();
@@ -1153,9 +1207,11 @@ void main(void) {
             elm.innerHTML = animating ? "Stop" : "Start";
         }
     }
+
     function stepAnimation() {
         if (!animating) animate();
     }
+
     function animate() {
         var curdate = new Date();
         timeInfo.elapsed = (curdate - timeInfo.start) / 1000.0;
@@ -1165,6 +1221,7 @@ void main(void) {
         if (animating) requestAnimationFrame(animate);
         render();
     }
+
     function makeCanvasFullScreen(canvas) {
         var b = document.body;
         var d = document.documentElement;
@@ -1173,6 +1230,7 @@ void main(void) {
         canvas.width = fullw;
         canvas.height = fullh;
     }
+
     window.addEventListener('load', function (e) {
         var canvas = document.getElementById("sakura");
         try {
@@ -1198,8 +1256,8 @@ void main(void) {
     //set window.requestAnimationFrame
     (function (w, r) {
         w['r' + r] = w['r' + r] || w['webkitR' + r] || w['mozR' + r] || w['msR' + r] || w['oR' + r] || function (c) {
-                w.setTimeout(c, 1000 / 60);
-            };
+            w.setTimeout(c, 1000 / 60);
+        };
     })(window, 'equestAnimationFrame');
 </script>
 </body>
