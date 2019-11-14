@@ -1,0 +1,21 @@
+{
+    "name": "紫玄",
+    "short_name": "紫玄",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "Purple Mystic's Main Page",
+    "icons": [
+        {
+            "src": "/favicon.png",
+            "sizes": "48x48 72x72 96x96 144x144 168x168 192x192 512x512",
+            "type": "image/png"
+        }
+    ],
+    "serviceworker": {
+        "src": "/sw.js",
+        "scope": "/",
+        "type": "",
+        "update_via_cache": "none"
+    }
+}

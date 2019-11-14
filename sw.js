@@ -34,12 +34,8 @@ self.__precacheManifest = [
     "revision": "aa83a94b4c1e27eb194e02044aa3d089"
   },
   {
-    "url": "favicon.ico",
-    "revision": "deeda05a83aeb675c348637216ddf5e9"
-  },
-  {
-    "url": "favicon.jpg",
-    "revision": "4e26730d924cc3682e8d73c31ad936d8"
+    "url": "favicon.png",
+    "revision": "11e7321c6c0cf31a875993609533c4a6"
   },
   {
     "url": "google8c0ba181a25e1328.html",
@@ -51,7 +47,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "ff24370cf32ec667495e7795617f1cfd"
+    "revision": "e7264f18a2dbd8d9cb1cb9f6d6fa018a"
   },
   {
     "url": "love/ANOHANA.mp3",
