@@ -10,13 +10,19 @@
  * and re-run your build process.
  * See https://goo.gl/2aRDsh
  */
-
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
+    if (event.data && event.data.type === 'SKIP_WAITING') {
+        self.skipWaiting();
+    }
+});
+
+self.addEventListener('install', function () {
+    return self.skipWaiting();
+});
+self.addEventListener('active', function () {
+    return self.clients.claim();
 });
 
 /**
@@ -24,7 +30,7 @@ self.addEventListener('message', (event) => {
  * requests for URLs in the manifest.
  * See https://goo.gl/S9QRab
  */
-self.__precacheManifest = [
+workbox.precaching.precacheAndRoute([
   {
     "url": "404.html",
     "revision": "653b6c73a95a0c326c514f38abad1334"
@@ -129,5 +135,4 @@ self.__precacheManifest = [
     "url": "qin_moon/universe.mp3",
     "revision": "09210380ac8e72dbb3e13068ccc9d464"
   }
-].concat(self.__precacheManifest || []);
-workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+]);
