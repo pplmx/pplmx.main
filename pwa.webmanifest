@@ -3,7 +3,7 @@
     "short_name": "紫玄",
     "start_url": "/",
     "display": "standalone",
-    "theme_color": "#9724eb"
+    "theme_color": "#9724eb",
     "background_color": "#fff",
     "description": "Purple Mystic's Homeage",
     "icons": [
