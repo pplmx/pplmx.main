@@ -1,10 +1,11 @@
 {
     "name": "紫玄",
     "short_name": "紫玄",
-    "start_url": "/index.html",
+    "start_url": "/",
     "display": "standalone",
+    "theme_color": "#9724eb"
     "background_color": "#fff",
-    "description": "Purple Mystic's Main Page",
+    "description": "Purple Mystic's Homeage",
     "icons": [
         {
             "src": "/favicon.png",
