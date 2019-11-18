@@ -12,17 +12,28 @@
  */
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
+// enable offline google analytics
+workbox.googleAnalytics.initialize();
+
 self.addEventListener('message', (event) => {
     if (event.data && event.data.type === 'SKIP_WAITING') {
         self.skipWaiting();
     }
 });
 
-self.addEventListener('install', function () {
-    return self.skipWaiting();
+self.addEventListener('install', (event) => {
+    console.log('👷', 'install', event);
+    self.skipWaiting();
 });
-self.addEventListener('active', function () {
+
+self.addEventListener('activate', (event) => {
+    console.log('👷', 'activate', event);
     return self.clients.claim();
+});
+
+self.addEventListener('fetch', function (event) {
+    console.log('👷', 'fetch', event);
+    event.respondWith(fetch(event.request));
 });
 
 /**
@@ -53,7 +64,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "e7264f18a2dbd8d9cb1cb9f6d6fa018a"
+    "revision": "8102097fbe97d2d4e6dcc01fc67746d4"
   },
   {
     "url": "love/ANOHANA.mp3",
@@ -136,3 +147,15 @@ workbox.precaching.precacheAndRoute([
     "revision": "09210380ac8e72dbb3e13068ccc9d464"
   }
 ]);
+
+workbox.routing.registerRoute("/.(?:png|jpg|jpeg|svg|ico)$/", new workbox.strategies.CacheFirst({"cacheName": "images", plugins: [new workbox.expiration.Plugin({maxEntries: 20, purgeOnQuotaError: false})]}), 'GET');
+
+workbox.routing.registerRoute(
+    new RegExp('\\.js$'),
+    jsHandler
+);
+
+workbox.routing.registerRoute(
+    new RegExp('\\.css$'),
+    cssHandler
+);
