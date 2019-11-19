@@ -21,10 +21,30 @@ self.addEventListener('message', (event) => {
     }
 });
 
-// self.addEventListener('install', (event) => {
-//     console.log('👷', 'install', event);
-//     self.skipWaiting();
-// });
+window.addEventListener("beforeinstallprompt", (event) => {
+    // Suppress automatic prompting.
+    event.preventDefault();
+
+    // Show the (disabled-by-default) install button. This button
+    // resolves the installButtonClicked promise when clicked.
+    installButton.disabled = false;
+
+    // Wait for the user to click the button.
+    installButton.addEventListener("click", async e => {
+        // The prompt() method can only be used once.
+        installButton.disabled = true;
+
+        // Show the prompt.
+        const {userChoice} = await event.prompt();
+        console.info(`user choice was: ${userChoice}`);
+    });
+});
+
+// Using .addEventListener()
+window.addEventListener("appinstalled", (ev) => {
+    const date = new Date(ev.timeStamp / 1000);
+    console.log(`Yay! Our app got installed at ${date.toTimeString()}.`);
+});
 
 self.addEventListener('activate', (event) => {
     console.log('👷', 'activate', event);
@@ -149,17 +169,23 @@ workbox.precaching.precacheAndRoute([
 ]);
 
 workbox.routing.registerRoute(
-    new RegExp("\\.(?:png|jpg|jpeg|svg|ico)"),
+    // Match common image extensions.
+    new RegExp("\\.(?:png|gif|jpg|jpeg|svg)$"),
+    // Use a cache-first strategy with the following config:
     new workbox.strategies.CacheFirst({
-        "cacheName": "images_cache",
+        // You need to provide a cache name when using expiration.
+        cacheName: "images",
         plugins: [
             new workbox.expiration.Plugin({
-                maxEntries: 20,
-                purgeOnQuotaError: false
+                // Keep at most 50 entries.
+                maxEntries: 50,
+                // Don't keep any entries for more than 30 days.
+                maxAgeSeconds: 30 * 24 * 60 * 60,
+                // Automatically cleanup if quota is exceeded.
+                purgeOnQuotaError: true,
             })
         ]
-    }),
-    "GET"
+    })
 );
 
 workbox.routing.registerRoute(

@@ -15,8 +15,6 @@
     ],
     "serviceworker": {
         "src": "/sw.js",
-        "scope": "/",
-        "type": "",
-        "update_via_cache": "none"
+        "scope": "/"
     }
 }
