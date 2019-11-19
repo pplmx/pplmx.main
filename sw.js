@@ -21,7 +21,7 @@ self.addEventListener('message', (event) => {
     }
 });
 
-window.addEventListener("beforeinstallprompt", (event) => {
+self.addEventListener("beforeinstallprompt", (event) => {
     // Suppress automatic prompting.
     event.preventDefault();
 
@@ -41,7 +41,7 @@ window.addEventListener("beforeinstallprompt", (event) => {
 });
 
 // Using .addEventListener()
-window.addEventListener("appinstalled", (ev) => {
+self.addEventListener("appinstalled", (ev) => {
     const date = new Date(ev.timeStamp / 1000);
     console.log(`Yay! Our app got installed at ${date.toTimeString()}.`);
 });
@@ -84,7 +84,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "8102097fbe97d2d4e6dcc01fc67746d4"
+    "revision": "0ea09cc543598c2d4e1cd155623da1c4"
   },
   {
     "url": "love/ANOHANA.mp3",

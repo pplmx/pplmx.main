@@ -4,6 +4,19 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108245491-1"></script>
     <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-108245491-1');
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Service Worker - WorkBox-Cli -->
+    <script>
         // Check that service workers are supported
         if ("serviceWorker" in navigator) {
             // attach event listener on page l aod
@@ -24,25 +37,13 @@
             });
         }
     </script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-
-        gtag('config', 'UA-108245491-1');
-    </script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <title>紫玄</title>
     <meta charset="utf-8">
-    <meta name="author" content="Purple Mystic">
-    <meta name="description" content="Purple Mystic's Homepage">
-    <meta name="keywords" content="Homepage, Purple Mystic, purplemystic, mystic">
-    <meta name="theme-color" content="#9724eb"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="Purple Mystic" name="author">
+    <meta content="Purple Mystic's Homepage" name="description">
+    <meta content="Homepage, Purple Mystic, purplemystic, mystic" name="keywords">
+    <meta content="#9724eb" name="theme-color"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <!--[if lte IE 8]>
     <script src="assets/js/html5shiv.js"></script><![endif]-->
     <link href="index.css" rel="stylesheet">
@@ -53,9 +54,9 @@
     <noscript>
         <link href="assets/css/noscript.css" rel="stylesheet"/>
     </noscript>
-    <link rel="icon" href="/favicon.png" type="image/x-icon">
-    <link rel="manifest" href="/pwa.webmanifest">
-    <link rel="apple-touch-icon" href="/favicon.png">
+    <link href="/favicon.png" rel="icon" type="image/x-icon">
+    <link href="/pwa.webmanifest" rel="manifest">
+    <link href="/favicon.png" rel="apple-touch-icon">
     <script>
         var _hmt = _hmt || [];
         (function () {
@@ -91,8 +92,8 @@
     <!-- Main -->
     <section id="main">
         <header>
-            <span class="avatar"><a href="https://blog.caoyu.info/"><img src="favicon.png"
-                                                                         width="118px" alt="This is a favicon."></a></span>
+            <span class="avatar"><a href="https://blog.caoyu.info/"><img alt="This is a favicon."
+                                                                         src="favicon.png" width="118px"></a></span>
             <!-- <a href="/love"> -->
             <h1>To infinity and beyond</h1>
             <!-- </a> -->
@@ -101,7 +102,7 @@
         <footer id="footer">
             <ul class="copyright">
                 <li>©<a href="https://blog.caoyu.info/">caoyu</a></li>
-                <li><img src="music.png" style="width: 10px; height: 10px;" alt="This is a music icon."><span class="song"></span></li>
+                <li><img alt="This is a music icon." src="music.png" style="width: 10px; height: 10px;"><span class="song"></span></li>
                 <li>since 2017</li>
             </ul>
         </footer>
@@ -215,6 +216,7 @@ void main(void) {
 
 
 
+
 </script>
 <script id="sakura_point_fsh" type="x-shader/x_fragment">
 #ifdef GL_ES
@@ -293,6 +295,7 @@ void main(void) {
 
 
 
+
 </script>
 <!-- effects -->
 <script id="fx_common_vsh" type="x-shader/x_vertex">
@@ -307,6 +310,7 @@ void main(void) {
     texCoord = aPosition.xy * 0.5 + vec2(0.5, 0.5);
     screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
 }
+
 
 
 
@@ -339,6 +343,7 @@ void main(void) {
 
 
 
+
 </script>
 <script id="fx_brightbuf_fsh" type="x-shader/x_fragment">
 #ifdef GL_ES
@@ -355,6 +360,7 @@ void main(void) {
     vec4 col = texture2D(uSrc, texCoord);
     gl_FragColor = vec4(col.rgb * 2.0 - vec3(0.5), 1.0);
 }
+
 
 
 
@@ -388,6 +394,7 @@ void main(void) {
 
 
 
+
 </script>
 <!-- effect fragment shader template -->
 <script id="fx_common_fsh" type="x-shader/x_fragment">
@@ -410,6 +417,7 @@ void main(void) {
 
 
 
+
 </script>
 <!-- post processing -->
 <script id="pp_final_vsh" type="x-shader/x_vertex">
@@ -422,6 +430,7 @@ void main(void) {
     texCoord = aPosition.xy * 0.5 + vec2(0.5, 0.5);
     screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
 }
+
 
 
 
@@ -450,6 +459,7 @@ void main(void) {
     gl_FragColor = vec4(col.rgb, 1.0);
     gl_FragColor.a = 1.0;
 }
+
 
 
 
