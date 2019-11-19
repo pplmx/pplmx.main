@@ -21,10 +21,10 @@ self.addEventListener('message', (event) => {
     }
 });
 
-self.addEventListener('install', (event) => {
-    console.log('👷', 'install', event);
-    self.skipWaiting();
-});
+// self.addEventListener('install', (event) => {
+//     console.log('👷', 'install', event);
+//     self.skipWaiting();
+// });
 
 self.addEventListener('activate', (event) => {
     console.log('👷', 'activate', event);
@@ -164,7 +164,7 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
     new RegExp(".+\\.html"),
-    workbox.strategies.networkFirst()
+    workbox.strategies.cacheFirst()
 );
 
 workbox.routing.registerRoute(
