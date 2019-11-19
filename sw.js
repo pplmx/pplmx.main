@@ -148,14 +148,26 @@ workbox.precaching.precacheAndRoute([
   }
 ]);
 
-workbox.routing.registerRoute("/.(?:png|jpg|jpeg|svg|ico)$/", new workbox.strategies.CacheFirst({"cacheName": "images", plugins: [new workbox.expiration.Plugin({maxEntries: 20, purgeOnQuotaError: false})]}), 'GET');
-
 workbox.routing.registerRoute(
-    new RegExp('\\.js$'),
-    jsHandler
+    new RegExp("\\.(?:png|jpg|jpeg|svg|ico)"),
+    new workbox.strategies.CacheFirst({
+        "cacheName": "images_cache",
+        plugins: [
+            new workbox.expiration.Plugin({
+                maxEntries: 20,
+                purgeOnQuotaError: false
+            })
+        ]
+    }),
+    "GET"
 );
 
 workbox.routing.registerRoute(
-    new RegExp('\\.css$'),
-    cssHandler
+    new RegExp(".+\\.html"),
+    workbox.strategies.networkFirst()
+);
+
+workbox.routing.registerRoute(
+    new RegExp(".+\\.(?:js|css)$"),
+    workbox.strategies.cacheFirst()
 );
