@@ -21,40 +21,40 @@ self.addEventListener('message', (event) => {
     }
 });
 
-self.addEventListener("beforeinstallprompt", (event) => {
-    // Suppress automatic prompting.
-    event.preventDefault();
-
-    // Show the (disabled-by-default) install button. This button
-    // resolves the installButtonClicked promise when clicked.
-    installButton.disabled = false;
-
-    // Wait for the user to click the button.
-    installButton.addEventListener("click", async e => {
-        // The prompt() method can only be used once.
-        installButton.disabled = true;
-
-        // Show the prompt.
-        const {userChoice} = await event.prompt();
-        console.info(`user choice was: ${userChoice}`);
-    });
-});
-
-// Using .addEventListener()
-self.addEventListener("appinstalled", (ev) => {
-    const date = new Date(ev.timeStamp / 1000);
-    console.log(`Yay! Our app got installed at ${date.toTimeString()}.`);
-});
-
-self.addEventListener('activate', (event) => {
-    console.log('👷', 'activate', event);
-    return self.clients.claim();
-});
-
-self.addEventListener('fetch', function (event) {
-    console.log('👷', 'fetch', event);
-    event.respondWith(fetch(event.request));
-});
+// self.addEventListener("beforeinstallprompt", (event) => {
+//     // Suppress automatic prompting.
+//     event.preventDefault();
+//
+//     // Show the (disabled-by-default) install button. This button
+//     // resolves the installButtonClicked promise when clicked.
+//     installButton.disabled = false;
+//
+//     // Wait for the user to click the button.
+//     installButton.addEventListener("click", async e => {
+//         // The prompt() method can only be used once.
+//         installButton.disabled = true;
+//
+//         // Show the prompt.
+//         const {userChoice} = await event.prompt();
+//         console.info(`user choice was: ${userChoice}`);
+//     });
+// });
+//
+// // Using .addEventListener()
+// self.addEventListener("appinstalled", (ev) => {
+//     const date = new Date(ev.timeStamp / 1000);
+//     console.log(`Yay! Our app got installed at ${date.toTimeString()}.`);
+// });
+//
+// self.addEventListener('activate', (event) => {
+//     console.log('👷', 'activate', event);
+//     return self.clients.claim();
+// });
+//
+// self.addEventListener('fetch', function (event) {
+//     console.log('👷', 'fetch', event);
+//     event.respondWith(fetch(event.request));
+// });
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
@@ -170,7 +170,7 @@ workbox.precaching.precacheAndRoute([
 
 workbox.routing.registerRoute(
     // Match common image extensions.
-    new RegExp("\\.(?:png|gif|jpg|jpeg|svg)$"),
+    new RegExp(".+\\.(?:png|gif|jpg|jpeg|ico|svg)"),
     // Use a cache-first strategy with the following config:
     new workbox.strategies.CacheFirst({
         // You need to provide a cache name when using expiration.
