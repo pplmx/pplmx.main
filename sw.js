@@ -12,8 +12,6 @@
  */
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
-// enable offline google analytics
-workbox.googleAnalytics.initialize();
 
 self.addEventListener('message', (event) => {
     if (event.data && event.data.type === 'SKIP_WAITING') {
@@ -21,40 +19,29 @@ self.addEventListener('message', (event) => {
     }
 });
 
-// self.addEventListener("beforeinstallprompt", (event) => {
-//     // Suppress automatic prompting.
-//     event.preventDefault();
-//
-//     // Show the (disabled-by-default) install button. This button
-//     // resolves the installButtonClicked promise when clicked.
-//     installButton.disabled = false;
-//
-//     // Wait for the user to click the button.
-//     installButton.addEventListener("click", async e => {
-//         // The prompt() method can only be used once.
-//         installButton.disabled = true;
-//
-//         // Show the prompt.
-//         const {userChoice} = await event.prompt();
-//         console.info(`user choice was: ${userChoice}`);
-//     });
-// });
-//
-// // Using .addEventListener()
-// self.addEventListener("appinstalled", (ev) => {
-//     const date = new Date(ev.timeStamp / 1000);
-//     console.log(`Yay! Our app got installed at ${date.toTimeString()}.`);
-// });
-//
-// self.addEventListener('activate', (event) => {
-//     console.log('👷', 'activate', event);
-//     return self.clients.claim();
-// });
-//
-// self.addEventListener('fetch', function (event) {
-//     console.log('👷', 'fetch', event);
-//     event.respondWith(fetch(event.request));
-// });
+self.addEventListener("install", (event) => {
+    console.log("[Service Worker] Installed", event);
+    self.skipWaiting();
+});
+
+self.addEventListener("activate", (event) => {
+    console.log("[Service Worker] Activated", event);
+    return self.clients.claim();
+});
+
+self.addEventListener("fetch", (event) => {
+    console.log("[Service Worker] Fetched resource ", event.request.url);
+    event.respondWith(
+        caches.match(event.request)
+            .then(function (response) {
+                if (response) {
+                    return response;
+                }
+                // not in cache, return from network
+                return fetch(event.request, {credentials: "include"});
+            })
+    );
+});
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
