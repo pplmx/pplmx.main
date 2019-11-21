@@ -184,10 +184,10 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
     new RegExp(".+\\.html"),
-    workbox.strategies.cacheFirst()
+    new workbox.strategies.CacheFirst()
 );
 
 workbox.routing.registerRoute(
     new RegExp(".+\\.(?:js|css)$"),
-    workbox.strategies.cacheFirst()
+    new workbox.strategies.CacheFirst()
 );
