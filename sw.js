@@ -13,7 +13,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 
-self.addEventListener('message', (event) => {
+self.addEventListener("message", (event) => {
     if (event.data && event.data.type === 'SKIP_WAITING') {
         self.skipWaiting();
     }
@@ -24,22 +24,23 @@ self.addEventListener("install", (event) => {
     self.skipWaiting();
 });
 
-self.addEventListener("activate", (event) => {
+self.addEventListener("activate", async (event) => {
     console.log("[Service Worker] Activated", event);
+    const cacheKeys = await caches.keys();
+    cacheKeys.forEach(cacheKey => {
+        if (cacheKey !== getCacheName()) {
+            caches.delete(cacheKey);
+        }
+    });
     return self.clients.claim();
 });
 
-self.addEventListener("fetch", (event) => {
+self.addEventListener("fetch", async (event) => {
     console.log("[Service Worker] Fetched resource ", event.request.url);
     event.respondWith(
-        caches.match(event.request)
-            .then(function (response) {
-                if (response) {
-                    return response;
-                }
-                // not in cache, return from network
-                return fetch(event.request, {credentials: "include"});
-            })
+        await caches.match(event.request).then(async (response) => {
+            return response || await fetch(event.request);
+        })
     );
 });
 
@@ -71,7 +72,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "0ea09cc543598c2d4e1cd155623da1c4"
+    "revision": "f676e1733bf1fc96b65d34a32020987b"
   },
   {
     "url": "love/ANOHANA.mp3",

@@ -28,6 +28,10 @@
                             "ServiceWorker registration successful with scope: ",
                             registration.scope
                         );
+                        // periodically check (each day) if there is a new version of the Service Worker
+                        setInterval(() => {
+                            registration.update();
+                        }, 24 * 3600 * 1000)
                     },
                     function (err) {
                         // registration failed :(
