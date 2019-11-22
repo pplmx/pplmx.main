@@ -19,6 +19,14 @@ workbox.setConfig({debug: true});
 workbox.core.skipWaiting();
 workbox.core.clientsClaim();
 
+// set cache name
+workbox.core.setCacheNameDetails({
+    prefix: 'purple_mystic',
+    suffix: 'v1',
+    precache: 'precache',
+    runtime: 'runtime'
+});
+
 self.addEventListener("message", (event) => {
     if (event.data && event.data.type === 'SKIP_WAITING') {
         self.skipWaiting();
@@ -34,6 +42,7 @@ self.addEventListener("activate", async (event) => {
     console.log("[Service Worker] Activated", event);
     const cacheKeys = await caches.keys();
     cacheKeys.forEach(cacheKey => {
+        console.log("cache key: ", cacheKey)
         if (cacheKey !== getCacheName()) {
             caches.delete(cacheKey);
         }
