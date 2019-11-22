@@ -41,11 +41,11 @@ self.addEventListener("activate", async (event) => {
     return self.clients.claim();
 });
 
-self.addEventListener("fetch", async (event) => {
+self.addEventListener("fetch", (event) => {
     console.log("[Service Worker] Fetched resource ", event.request.url);
     event.respondWith(
-        await caches.match(event.request).then(async (response) => {
-            return response || await fetch(event.request);
+        caches.match(event.request).then((response) => {
+            return response || fetch(event.request);
         })
     );
 });
