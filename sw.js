@@ -42,7 +42,7 @@ self.addEventListener("activate", async (event) => {
     console.log("[Service Worker] Activated", event);
     const cacheKeys = await caches.keys();
     cacheKeys.forEach(cacheKey => {
-        console.log("cache key: ", cacheKey)
+        console.log("cache key: ", cacheKey);
         if (cacheKey !== getCacheName()) {
             caches.delete(cacheKey);
         }
@@ -52,6 +52,11 @@ self.addEventListener("activate", async (event) => {
 
 self.addEventListener("fetch", (event) => {
     console.log("[Service Worker] Fetched resource ", event.request.url);
+    // Uncaught (in promise) TypeError: Failed to execute 'fetch' on 'WorkerGlobalScope': 'only-if-cached' can be set only with 'same-origin' mode
+    if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') {
+        console.log('Fetching operation throws a exception: ', event);
+        return;
+    }
     event.respondWith(
         caches.match(event.request).then((response) => {
             return response || fetch(event.request);
