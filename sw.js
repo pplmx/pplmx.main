@@ -1,19 +1,7 @@
-/**
- * Welcome to your Workbox-powered service worker!
- *
- * You'll need to register this file in your web app and you should
- * disable HTTP caching for this file too.
- * See https://goo.gl/nhQhGp
- *
- * The rest of the code is auto-generated. Please don't update this file
- * directly; instead, make changes to your Workbox build configuration
- * and re-run your build process.
- * See https://goo.gl/2aRDsh
- */
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 // Detailed logging is very useful during development
-workbox.setConfig({debug: true});
+// workbox.setConfig({debug: true});
 
 // Updating SW lifecycle to update the app after user triggered refresh
 workbox.core.skipWaiting();
@@ -34,12 +22,12 @@ self.addEventListener("message", (event) => {
 });
 
 self.addEventListener("install", (event) => {
-    console.log("[Service Worker] Installed", event);
+    console.log("[Service Worker] Installed.");
     self.skipWaiting();
 });
 
 self.addEventListener("activate", async (event) => {
-    console.log("[Service Worker] Activated", event);
+    console.log("[Service Worker] Activated.");
     const cacheKeys = await caches.keys();
     cacheKeys.forEach(cacheKey => {
         console.log("cache key: ", cacheKey);
@@ -52,6 +40,7 @@ self.addEventListener("activate", async (event) => {
 
 self.addEventListener("fetch", (event) => {
     console.log("[Service Worker] Fetched resource ", event.request.url);
+    // Fix the following error:
     // Uncaught (in promise) TypeError: Failed to execute 'fetch' on 'WorkerGlobalScope': 'only-if-cached' can be set only with 'same-origin' mode
     if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') {
         console.log('Fetching operation throws a exception: ', event);
