@@ -39,7 +39,7 @@ self.addEventListener("activate", async (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-    console.log("[Service Worker] Fetched resource ", event.request.url);
+    // console.log("[Service Worker] Fetched resource ", event.request.url);
     // Fix the following error:
     // Uncaught (in promise) TypeError: Failed to execute 'fetch' on 'WorkerGlobalScope': 'only-if-cached' can be set only with 'same-origin' mode
     if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') {
@@ -186,11 +186,15 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-    new RegExp(".+\\.html"),
-    new workbox.strategies.CacheFirst()
+    /.*(?:googleapis|gstatic)\.com/,
+    new workbox.strategies.StaleWhileRevalidate({
+        cacheName: 'third-party-requests'
+    })
 );
 
 workbox.routing.registerRoute(
-    new RegExp(".+\\.(?:js|css)$"),
-    new workbox.strategies.CacheFirst()
+    /.+\.(?:js|css)$/,
+    new workbox.strategies.StaleWhileRevalidate({
+        cacheName: 'static-resource'
+    })
 );
