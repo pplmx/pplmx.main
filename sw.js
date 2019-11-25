@@ -31,7 +31,7 @@ self.addEventListener("activate", async (event) => {
     const cacheKeys = await caches.keys();
     cacheKeys.forEach(cacheKey => {
         console.log("cache key: ", cacheKey);
-        if (cacheKey !== getCacheName()) {
+        if (cacheKey !== 'purple_mystic-precache-v1' && cacheKey !== 'purple_mystic-runtime-v1') {
             caches.delete(cacheKey);
         }
     });
