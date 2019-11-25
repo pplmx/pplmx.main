@@ -75,6 +75,10 @@ workbox.precaching.precacheAndRoute([
     "revision": "653b6c73a95a0c326c514f38abad1334"
   },
   {
+    "url": "app.js",
+    "revision": "ca8d3419954c12129d126ae400f23115"
+  },
+  {
     "url": "baidu_verify_y3hTDLeZxl.html",
     "revision": "aa83a94b4c1e27eb194e02044aa3d089"
   },
@@ -88,11 +92,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.css",
-    "revision": "d9fccc7fed9294c29d5e6af474182cf4"
+    "revision": "6077ac896abf46ddc7b63e38a313d939"
   },
   {
     "url": "index.html",
-    "revision": "9244a6076b3249697c8f7d43a07afd21"
+    "revision": "b261ffd6a7b55b4e234e19c52cf11968"
   },
   {
     "url": "love/ANOHANA.mp3",
