@@ -15,6 +15,8 @@ workbox.core.setCacheNameDetails({
     runtime: 'runtime'
 });
 
+const pre_cache_name = 'purple_mystic-precache-v1';
+
 self.addEventListener("message", (event) => {
     if (event.data && event.data.type === 'SKIP_WAITING') {
         self.skipWaiting();
@@ -31,14 +33,14 @@ self.addEventListener("activate", async (event) => {
     const cacheKeys = await caches.keys();
     cacheKeys.forEach(cacheKey => {
         console.log("cache key: ", cacheKey);
-        if (cacheKey !== 'purple_mystic-precache-v1') {
+        if (cacheKey !== pre_cache_name) {
             caches.delete(cacheKey);
         }
     });
     return self.clients.claim();
 });
 
-self.addEventListener("fetch", (event) => {
+self.addEventListener("fetch", event => {
     // console.log("[Service Worker] Fetched resource ", event.request.url);
     // Fix the following error:
     // Uncaught (in promise) TypeError: Failed to execute 'fetch' on 'WorkerGlobalScope': 'only-if-cached' can be set only with 'same-origin' mode
@@ -47,12 +49,17 @@ self.addEventListener("fetch", (event) => {
         return;
     }
     event.respondWith(
-        caches.match(event.request).then((response) => {
+        caches.match(event.request).then(response => {
             // if response is not null(i.e. request in cache), return it at once
             // if response null, fetch it from network
-            return response || fetch(event.request);
+            return response || fetch(event.request).then(resp => {
+                return caches.open(pre_cache_name).then(cache => {
+                    cache.put(event.request, resp.clone());
+                    return resp;
+                });
+            });
         }).catch(error => {
-            console.log("Something wrong occurred: ", error)
+            console.log("Something wrong occurred: ", error);
         })
     );
 });
@@ -85,7 +92,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "f676e1733bf1fc96b65d34a32020987b"
+    "revision": "9244a6076b3249697c8f7d43a07afd21"
   },
   {
     "url": "love/ANOHANA.mp3",
@@ -190,7 +197,7 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-    /.*(?:googleapis|gstatic)\.com/,
+    /.*(?:googleapis|gstatic|baidu)\.com/,
     new workbox.strategies.StaleWhileRevalidate({
         cacheName: 'third-party-requests'
     })
