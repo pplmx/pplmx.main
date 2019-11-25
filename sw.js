@@ -31,7 +31,7 @@ self.addEventListener("activate", async (event) => {
     const cacheKeys = await caches.keys();
     cacheKeys.forEach(cacheKey => {
         console.log("cache key: ", cacheKey);
-        if (cacheKey !== 'purple_mystic-precache-v1' && cacheKey !== 'purple_mystic-runtime-v1') {
+        if (cacheKey !== 'purple_mystic-precache-v1') {
             caches.delete(cacheKey);
         }
     });
@@ -48,7 +48,11 @@ self.addEventListener("fetch", (event) => {
     }
     event.respondWith(
         caches.match(event.request).then((response) => {
+            // if response is not null(i.e. request in cache), return it at once
+            // if response null, fetch it from network
             return response || fetch(event.request);
+        }).catch(error => {
+            console.log("Something wrong occurred: ", error)
         })
     );
 });
