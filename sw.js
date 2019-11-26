@@ -32,7 +32,6 @@ self.addEventListener("activate", async (event) => {
     console.log("[Service Worker] Activated.");
     const cacheKeys = await caches.keys();
     cacheKeys.forEach(cacheKey => {
-        console.log("cache key: ", cacheKey);
         if (cacheKey !== pre_cache_name) {
             caches.delete(cacheKey);
         }
@@ -50,13 +49,19 @@ self.addEventListener("fetch", event => {
     }
     event.respondWith(
         caches.match(event.request).then(response => {
-            // if response is not null(i.e. request in cache), return it at once
-            // if response null, fetch it from network
-            return response || fetch(event.request).then(resp => {
-                return caches.open(pre_cache_name).then(cache => {
-                    cache.put(event.request, resp.clone());
-                    return resp;
-                });
+            // response from cache
+            if (response.status === 200) {
+                return response;
+            }
+
+            // response from network
+            fetch(event.request).then(resp => {
+                if (resp.status === 200) {
+                    return caches.open(pre_cache_name).then(cache => {
+                        cache.put(event.request, resp.clone());
+                        return resp;
+                    });
+                }
             });
         }).catch(error => {
             console.log("Something wrong occurred: ", error);
@@ -97,10 +102,6 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
     "revision": "b261ffd6a7b55b4e234e19c52cf11968"
-  },
-  {
-    "url": "love/ANOHANA.mp3",
-    "revision": "c40149ee1c98c6ed289144b0a61f9a2c"
   },
   {
     "url": "love/index.html",
@@ -149,34 +150,6 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "music.png",
     "revision": "1f5c5a4e33404a89df10a514db528d13"
-  },
-  {
-    "url": "qin_moon/beautiful.mp3",
-    "revision": "f81afbc153605c0ac0401e880dc7cfbc"
-  },
-  {
-    "url": "qin_moon/chaos.mp3",
-    "revision": "877029ae5f2712d8a71a68c0a2e2c384"
-  },
-  {
-    "url": "qin_moon/dominate.mp3",
-    "revision": "bed5e816a7505159f0db826918d88ed8"
-  },
-  {
-    "url": "qin_moon/hall.mp3",
-    "revision": "be9b9f2b188ef84a0de7af03b1d89623"
-  },
-  {
-    "url": "qin_moon/invincible.mp3",
-    "revision": "931ec553321dc550b3b3b118df03e171"
-  },
-  {
-    "url": "qin_moon/snow_flower.mp3",
-    "revision": "5565d0bc7bef3f1746c9635f2be1d7c9"
-  },
-  {
-    "url": "qin_moon/universe.mp3",
-    "revision": "09210380ac8e72dbb3e13068ccc9d464"
   }
 ]);
 
@@ -201,15 +174,26 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-    /.*(?:googleapis|gstatic|baidu)\.com/,
+    /.+\.(?:js|css)$/,
     new workbox.strategies.StaleWhileRevalidate({
-        cacheName: 'third-party-requests'
+        cacheName: 'static'
     })
 );
 
 workbox.routing.registerRoute(
-    /.+\.(?:js|css)$/,
+    /.*\.mp3$/,
     new workbox.strategies.StaleWhileRevalidate({
-        cacheName: 'static-resource'
+        cacheName: 'media',
+        plugins: [
+            new workbox.cacheableResponse.Plugin({statuses: [200]}),
+            new workbox.rangeRequests.Plugin(),
+        ],
+    })
+);
+
+workbox.routing.registerRoute(
+    /.*(?:googleapis|gstatic|baidu)\.com/,
+    new workbox.strategies.StaleWhileRevalidate({
+        cacheName: 'third-party-requests'
     })
 );
