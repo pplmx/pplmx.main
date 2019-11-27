@@ -50,34 +50,34 @@ self.addEventListener('fetch', function (event) {
 
     // if range, to handle partial content, whose status code is 206
     if (event.request.headers.get('range')) {
-        var pos =
-            Number(/^bytes\=(\d+)\-$/g.exec(event.request.headers.get('range'))[1]);
+        let pos =
+            Number(/^bytes=(\d+)-$/g.exec(event.request.headers.get('range'))[1]);
 
         console.log('Range request for', event.request.url,
             ', starting position:', pos);
 
         event.respondWith(
-            caches.open('purple_mystic-precache-v1')
+            caches.open(pre_cache_name)
                 .then(cache => {
                     return cache.match(event.request.url);
                 }).then(async res => {
-                    if (!res) {
-                        const res_1 = await fetch(event.request);
-                        return res_1.arrayBuffer();
-                    }
-                    return res.arrayBuffer();
-                }).then((ab) => {
-                    return new Response(
-                        ab.slice(pos),
-                        {
-                            status: 206,
-                            statusText: 'Partial Content',
-                            headers: [
-                                // ['Content-Type', 'video/webm'],
-                                ['Content-Range', 'bytes ' + pos + '-' +
-                                    (ab.byteLength - 1) + '/' + ab.byteLength]]
-                        });
-                }));
+                if (!res) {
+                    const res_1 = await fetch(event.request);
+                    return res_1.arrayBuffer();
+                }
+                return res.arrayBuffer();
+            }).then((ab) => {
+                return new Response(
+                    ab.slice(pos),
+                    {
+                        status: 206,
+                        statusText: 'Partial Content',
+                        headers: [
+                            // ['Content-Type', 'video/webm'],
+                            ['Content-Range', 'bytes ' + pos + '-' +
+                            (ab.byteLength - 1) + '/' + ab.byteLength]]
+                    });
+            }));
     } else {
         // console.log('Non-range request for', event.request.url);
         event.respondWith(
@@ -87,8 +87,11 @@ self.addEventListener('fetch', function (event) {
                 // event.request will always have the proper mode set ('cors, 'no-cors', etc.) so we don't
                 // have to hardcode 'no-cors' like we do when fetch()ing in the install handler.
                 return response || fetch(event.request).then(response => {
-                    return response;
-                }).catch(function (error) {
+                    return caches.open(pre_cache_name).then(cache => {
+                        cache.put(event.request, response.clone());
+                        return response;
+                    });
+                }).catch(error => {
                     // This catch() will handle exceptions thrown from the fetch() operation.
                     // Note that a HTTP error response (e.g. 404) will NOT trigger an exception.
                     // It will return a normal response object that has the appropriate error code set.
