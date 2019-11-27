@@ -56,7 +56,7 @@ self.addEventListener('fetch', function (event) {
         console.log('Range request for', event.request.url,
             ', starting position:', pos);
         event.respondWith(
-            caches.open(CURRENT_CACHES.prefetch)
+            caches.open('purple_mystic-precache-v1')
                 .then(function (cache) {
                     return cache.match(event.request.url);
                 }).then(async function (res) {
