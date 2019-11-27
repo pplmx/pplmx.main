@@ -40,7 +40,6 @@ self.addEventListener("activate", async (event) => {
 });
 
 self.addEventListener('fetch', function (event) {
-    console.log('Handling fetch event for', event.request.url);
 
     // Fix the following error:
     // Uncaught (in promise) TypeError: Failed to execute 'fetch' on 'WorkerGlobalScope': 'only-if-cached' can be set only with 'same-origin' mode
@@ -53,19 +52,21 @@ self.addEventListener('fetch', function (event) {
     if (event.request.headers.get('range')) {
         var pos =
             Number(/^bytes\=(\d+)\-$/g.exec(event.request.headers.get('range'))[1]);
+
         console.log('Range request for', event.request.url,
             ', starting position:', pos);
+
         event.respondWith(
             caches.open('purple_mystic-precache-v1')
-                .then(function (cache) {
+                .then(cache => {
                     return cache.match(event.request.url);
-                }).then(async function (res) {
+                }).then(async res => {
                     if (!res) {
                         const res_1 = await fetch(event.request);
                         return res_1.arrayBuffer();
                     }
                     return res.arrayBuffer();
-                }).then(function (ab) {
+                }).then((ab) => {
                     return new Response(
                         ab.slice(pos),
                         {
@@ -78,20 +79,14 @@ self.addEventListener('fetch', function (event) {
                         });
                 }));
     } else {
-        console.log('Non-range request for', event.request.url);
+        // console.log('Non-range request for', event.request.url);
         event.respondWith(
             // caches.match() will look for a cache entry in all of the caches available to the service worker.
             // It's an alternative to first opening a specific named cache and then matching on that.
-            caches.match(event.request).then(function (response) {
-                if (response) {
-                    console.log('Found response in cache:', response);
-                    return response;
-                }
-                console.log('No response found in cache. About to fetch from network...');
+            caches.match(event.request).then(response => {
                 // event.request will always have the proper mode set ('cors, 'no-cors', etc.) so we don't
                 // have to hardcode 'no-cors' like we do when fetch()ing in the install handler.
-                return fetch(event.request).then(function (response) {
-                    console.log('Response from network is:', response);
+                return response || fetch(event.request).then(response => {
                     return response;
                 }).catch(function (error) {
                     // This catch() will handle exceptions thrown from the fetch() operation.
@@ -104,7 +99,6 @@ self.addEventListener('fetch', function (event) {
         );
     }
 });
-
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
