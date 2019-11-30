@@ -135,7 +135,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "b261ffd6a7b55b4e234e19c52cf11968"
+    "revision": "47b86dd31d739f2feba5ee526434bfef"
   },
   {
     "url": "love/index.html",
