@@ -44,7 +44,15 @@ self.addEventListener('fetch', function (event) {
     // Fix the following error:
     // Uncaught (in promise) TypeError: Failed to execute 'fetch' on 'WorkerGlobalScope': 'only-if-cached' can be set only with 'same-origin' mode
     if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') {
-        console.log('Fetching operation throws a exception: ', event);
+        console.log('WORKER: Fetching operation throws a exception: ', event);
+        return;
+    }
+    
+    if (event.request.method !== 'GET') {
+        /* If we don't block the event as shown below, then the request will go to
+           the network as usual.
+        */
+        console.log('WORKER: fetch event ignored.', event.request.method, event.request.url);
         return;
     }
 
