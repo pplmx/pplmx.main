@@ -3,11 +3,15 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108245491-1"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'UA-108245491-1');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-108245491-1');
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <!-- hexo-inject:begin --><!-- hexo-inject:end -->
@@ -105,6 +109,7 @@
     </style>
     <script type="text/javascript">
         var num = 4;
+
         function redirect() {
             num--;
             document.getElementById("num").innerHTML = num;
@@ -113,6 +118,7 @@
                 location.href = "https://caoyu.info";
             }
         }
+
         setInterval("redirect()", 1000);
     </script>
     <!-- hexo-inject:begin --><!-- hexo-inject:end -->
@@ -125,7 +131,7 @@
     <div class="mask"></div>
 </div>
 <div class="b">
-    <img src="http://7xowaa.com1.z0.glb.clouddn.com/404.png" class="center">
+    <img class="center" src="http://7xowaa.com1.z0.glb.clouddn.com/404.png">
     <p>
         暂时未能找到您查找的页面<br>
         可能输入的网址错误或此页面不存在<br>
@@ -134,4 +140,4 @@
 </div>
 <!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
-</html>    
+</html>

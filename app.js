@@ -1,27 +1,13 @@
-(() => {
-    // Check that service workers are supported
-    if ('serviceWorker' in navigator) {
-        // attach event listener on page l aod
-        window.addEventListener('load', () => {
-            // register serviceWorker with the [sw.js] file
-            navigator.serviceWorker.register('/sw.js').then(
-                (registration) => {
-                    console.log(
-                        '[Service Worker] Registered on ',
-                        registration.scope
-                    );
-                },
-                (error) => {
-                    // registration failed :(
-                    console.log('[Service Worker] Registered Failed: ', error);
-                }
-            );
-        });
-    }
+(function () {
+    change();
 })();
 
 function change() {
-    const song = [
+    // 获取当前日期
+    const date = new Date().getDay();
+
+    // 获取歌曲列表和歌曲标题
+    const songList = [
         '乾坤鸣动',
         '飞雪玉花',
         '国色天香',
@@ -30,7 +16,7 @@ function change() {
         '谁主沉浮',
         '阴阳无极',
     ];
-    const songLetter = [
+    const songTitle = [
         'universe',
         'snow_flower',
         'beautiful',
@@ -39,14 +25,18 @@ function change() {
         'dominate',
         'chaos',
     ];
-    const date = new Date().getDay();
-    const audio = document.getElementsByTagName('audio')[0];
-    const songLi = document.getElementsByClassName('song')[0];
-    for (let i = 0; i < song.length; i++) {
-        if (i === date) {
-            audio.src = `qin_moon/${songLetter[date]}.mp3`;
-            songLi.innerText = ` 秦时明月:${song[date]}`;
-            break;
-        }
+
+    // 设置音频文件路径和歌曲标题
+    const audio = document.getElementById('qin_moon_audio');
+    audio.src = `qin_moon/${songTitle[date]}.mp3`;
+    const songLi = document.getElementById('qin_moon_song');
+    songLi.innerText = ` 秦时明月:${songList[date]}`;
+
+    // 为 body 元素添加点击事件，点击时播放音乐
+    document.body.addEventListener('click', playMusic);
+
+    // 定义播放音乐函数
+    function playMusic() {
+        audio.play();
     }
 }
