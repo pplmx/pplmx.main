@@ -1,42 +1,26 @@
 (function () {
-    change();
-})();
-
-function change() {
-    // 获取当前日期
-    const date = new Date().getDay();
-
-    // 获取歌曲列表和歌曲标题
-    const songList = [
-        '乾坤鸣动',
-        '飞雪玉花',
-        '国色天香',
-        '罗生堂下',
-        '纵横天下',
-        '谁主沉浮',
-        '阴阳无极',
-    ];
-    const songTitle = [
-        'universe',
-        'snow_flower',
-        'beautiful',
-        'hall',
-        'invincible',
-        'dominate',
-        'chaos',
+    // 歌曲列表
+    const songs = [
+        { title: '乾坤鸣动', file: 'universe' },
+        { title: '飞雪玉花', file: 'snow_flower' },
+        { title: '国色天香', file: 'beautiful' },
+        { title: '罗生堂下', file: 'hall' },
+        { title: '纵横天下', file: 'invincible' },
+        { title: '谁主沉浮', file: 'dominate' },
+        { title: '阴阳无极', file: 'chaos' },
     ];
 
-    // 设置音频文件路径和歌曲标题
+    // 缓存 DOM 元素
     const audio = document.getElementById('qin_moon_audio');
-    audio.src = `qin_moon/${songTitle[date]}.mp3`;
     const songLi = document.getElementById('qin_moon_song');
-    songLi.innerText = ` 秦时明月:${songList[date]}`;
 
-    // 为 body 元素添加点击事件，点击时播放音乐
-    document.body.addEventListener('click', playMusic);
+    // 获取当前日期对应的歌曲
+    const { title, file } = songs[new Date().getDay()];
 
-    // 定义播放音乐函数
-    function playMusic() {
-        audio.play();
-    }
-}
+    // 更新音频源和显示的歌曲标题
+    audio.src = `qin_moon/${file}.mp3`;
+    songLi.innerText = `秦时明月: ${title}`;
+
+    // 添加点击事件以播放音乐
+    document.body.addEventListener('click', () => audio.play(), { once: true });
+})();
